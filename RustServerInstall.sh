@@ -1,18 +1,16 @@
 #!/bin/bash
 useradd -m steam #add steam user 
+cd /home/steam
+sudo apt install steamcmd #install steam cmd from packadge dist (ubuntu/deb)
+ sudo add-apt-repository multiverse
+ sudo dpkg --add-architecture i386
+ sudo apt update
+ sudo apt install lib32gcc1 steamcmd 
+ 
+cd ~ #navigate to home user directory 
+mdkir rust #create rust dir 
 
-
-
-
-
-
-
-
-
-
-
-
-echo  
+echo  "
 #!/bin/sh
 clear while : do
 exec ./RustDedicated -batchmode -nographics \
@@ -32,6 +30,11 @@ exec ./RustDedicated -batchmode -nographics \
 -server.headerimage "512x256px JPG/PNG headerimage link here" \
 -server.url "Your Website Here"
 echo "\nRestarting server...\n" done
-
+" 
+ >  StartRust.sh 
+chmod u+x StartRust.sh
 
 #(ports 28015 and 28016)
+
+
+#this script is not fully tested atm 
