@@ -10,6 +10,13 @@ sudo apt install steamcmd #install steam cmd from packadge dist (ubuntu/deb)
 cd ~ #navigate to home user directory 
 mdkir rust #create rust dir 
 
+steamcmd 
+login anonymous
+force_install_dir "~/rust"
+app_update 258550
+quit
+
+
 echo  "
 #!/bin/sh
 clear while : do
